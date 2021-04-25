@@ -1,3 +1,4 @@
+-- implementation of an is_prime function, based off my c version of the function.
 function lua_is_prime(n)
 	if n<=3 then
 		return n>1
@@ -11,4 +12,9 @@ function lua_is_prime(n)
 		end
 	end
 	return true
+end
+
+-- this checks my lua isprime against my c isprime
+for i=1, 100 do
+	print(lua_is_prime(i) == c_is_prime(i))
 end
