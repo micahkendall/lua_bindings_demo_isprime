@@ -14,7 +14,8 @@ function lua_is_prime(n)
 	return true
 end
 
--- this checks my lua isprime against my c isprime
-for i=1, 100 do
-	print(lua_is_prime(i) == c_is_prime(i))
+-- check for prime factorials using my C functions
+-- using lua to feed the output of factorial into the input of is_prime
+for i=1, 20 do
+	print(c_is_prime(c_factorial(i)))
 end

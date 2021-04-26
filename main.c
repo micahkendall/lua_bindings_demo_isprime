@@ -32,6 +32,23 @@ static int l_is_prime(lua_State *L)
   return 1;
 };
 
+int factorial(int n){
+	int m = 1;
+	int i = 2;
+	while (i<=n){
+		m*=i;
+		i++;
+	};
+	return m;
+};
+
+static int l_factorial(lua_State *L)
+{
+	int n = (int)lua_tonumber(L, 1);
+	lua_pushnumber(L, factorial(n));
+	return 1;
+};
+
 int main() {
   // Create lua state
   lua_State *L = luaL_newstate();
@@ -39,6 +56,7 @@ int main() {
   luaL_openlibs(L);
   // Use my macro above to load in a lua-C function in one line
   PUSH_FUNCTION(l_is_prime, "c_is_prime")
+  PUSH_FUNCTION(l_factorial, "c_factorial")
   // Execute the demo script
   luaL_dofile(L, "demo.lua");
   return 0;
