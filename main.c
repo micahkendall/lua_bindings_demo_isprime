@@ -32,6 +32,7 @@ static int l_is_prime(lua_State *L)
   return 1;
 };
 
+// defining factorials seperately just to show you can create C functions then bind them
 int factorial(int n){
 	int m = 1;
 	int i = 2;
