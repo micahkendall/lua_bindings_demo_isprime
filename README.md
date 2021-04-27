@@ -1,3 +1,5 @@
+# INFO 1111 Assignment 1
+
 My (Micah Kendall's) demo for my level 1 & 2 Info 1111 self learning project
 
 Compile using
